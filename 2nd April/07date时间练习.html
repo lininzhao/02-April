@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //求当前距离1949年10月1日过去多少年，即建国多少年
+        var date=new Date();
+        var date2=new Date('1949-10-1');
+        console.log(date);
+        console.log(date2);
+        var res=Math.abs(date2-date);
+        console.log(res);
+        var res2=Math.floor(res/1000/60/60/24/365);
+        console.log(`建国${res2}年`);
+
+        console.log('-------------分割线--------------------')
+        //方法2，利用1970年1月1日为时间节点，计算两者相对于时间点走了多少，再相减
+        var time1=new Date();
+        var time2=new Date('1949/10/01');
+        console.log(time1);
+        console.log(time2);
+        var sub1=time1.getTime();
+        var sub2=time2.getTime();
+        var sub=Math.abs(sub1-sub2);
+        var years=parseInt(sub/1000/60/60/24/365);
+        console.log(`目前距离建国过去了${years}年`);
+
+    </script>
+</body>
+</html>
